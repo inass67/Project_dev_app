@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analyse de sentiment</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; color: #1f2933; }
+    label { display: block; margin-top: 1rem; font-weight: 600; }
+    input, textarea { width: 100%; padding: .5rem; font: inherit; box-sizing: border-box; }
+    textarea { min-height: 6rem; }
+    button { margin-top: 1rem; padding: .6rem 1.2rem; font: inherit; cursor: pointer; }
+    #resultat { margin-top: 1.5rem; padding: 1rem; border-radius: 6px; display: none; }
+    .ok { background: #e3f9e5; } .doute { background: #fff3c4; } .erreur { background: #ffe3e3; }
+  </style>
+</head>
+<body>
+  <h1>Analyse de sentiment des avis</h1>
+  <form id="formulaire">
+    <label for="url">Adresse de l'API</label>
+    <input id="url" value="http://127.0.0.1:8000">
+    <label for="cle">Clé d'API (client)</label>
+    <input id="cle" type="password" autocomplete="off">
+    <label for="texte">Avis client</label>
+    <textarea id="texte" placeholder="Livraison rapide, produit conforme, très satisfait"></textarea>
+    <button type="submit">Analyser</button>
+  </form>
+  <div id="resultat" role="status"></div>
+
+  <script type="module">
+    import { classer, texteResultat } from "./client.js";
+    const $ = (id) => document.getElementById(id);
+    $("formulaire").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const r = await classer($("url").value, $("cle").value, $("texte").value);
+      const zone = $("resultat");
+      zone.textContent = texteResultat(r);
+      zone.className = !r.ok ? "erreur" : r.label === "INDETERMINE" ? "doute" : "ok";
+      zone.style.display = "block";
+    });
+  </script>
+</body>
+</html>
