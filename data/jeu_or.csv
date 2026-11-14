@@ -1,1 +1,22 @@
 text,attendu,difficulte,erreur_connue
+"Colis livré en avance, produit conforme à la description, je recommande",POSITIVE,,
+"Très bon rapport qualité prix, emballage soigné",POSITIVE,,
+"Service client réactif, remboursement reçu en trois jours",POSITIVE,,
+"Produit parfait, livraison rapide, rien à redire",POSITIVE,,
+"Excellent achat, finitions propres et notice claire",POSITIVE,,
+"Je suis très satisfait, conforme aux photos",POSITIVE,,
+"Le vendeur ne répond plus depuis dix jours, c'est inadmissible",NEGATIVE,,"vocabulaire absent : vendeur et inadmissible ne sont pas dans les 316 termes, le modèle décide sur des mots neutres"
+Mon colis s'est perdu et personne ne veut me rembourser,NEGATIVE,,
+"Produit de mauvaise qualité, il s'est cassé au bout d'une semaine",NEGATIVE,,
+"Les chaussures taillent beaucoup trop grand, déçue de cet achat",NEGATIVE,,
+"Livraison en retard de deux semaines, colis abîmé",NEGATIVE,,
+Mode d'emploi illisible et une vis en moins dans le carton,NEGATIVE,,"vocabulaire absent : illisible et vis inconnus du modèle, aucun mot négatif reconnu"
+"On m'a facturé deux fois la même commande, honteux",NEGATIVE,,
+"Pas déçu du tout, je recommande",POSITIVE,négation,
+"Ce n'est pas un mauvais produit, loin de là",POSITIVE,négation,négation : le sac de mots voit mauvais sans voir pas ni loin de là
+"Arrivé cassé, bravo le transporteur",NEGATIVE,ironie,
+"Génial, trois semaines d'attente pour un colis vide",NEGATIVE,ironie,
+"Livraison lente mais produit excellent, finalement très satisfait",POSITIVE,avis mitigé,
+"Joli emballage, dommage que l'écran soit fissuré dès l'ouverture",NEGATIVE,avis mitigé,
+Le film est trop long et les acteurs jouent faux,NEGATIVE,autre domaine,
+"Ce restaurant est délicieux, le serveur était adorable",POSITIVE,autre domaine,
