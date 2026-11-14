@@ -1,52 +1,13 @@
-#!/usr/bin/env python
-"""Prédiction unitaire : la fonction que l'API de la semaine 3 appellera.
+"""Fichier de compatibilité (TP6) : predict.py vit désormais dans le paquet sentiment_app.
 
-Usage :
+Les anciennes habitudes continuent de fonctionner, sans logique métier ici :
   python src/predict.py "Livraison rapide, très satisfait"
   >>> from predict import predict ; predict("texte")
+Lancé comme script, il demande le paquet installé : pip install -e .
 """
-import sys
-from functools import lru_cache
-from pathlib import Path
-from typing import TypedDict
+from sentiment_app.predict import MODELE, Resultat, charger_modele, main, predict
 
-import joblib
-
-MODELE = Path(__file__).resolve().parents[1] / "models" / "sentiment.joblib"
-
-
-class Resultat(TypedDict):
-    """Retour de predict() : un type précis, que mypy suit jusqu'au contrat de l'API (TP4)."""
-    label: str
-    score: float
-
-
-@lru_cache(maxsize=1)
-def charger_modele():
-    """Chargé une seule fois par processus, pas à chaque appel."""
-    if not MODELE.exists():
-        raise FileNotFoundError("models/sentiment.joblib absent : lancez python src/train.py")
-    return joblib.load(MODELE)
-
-
-def predict(texte: str) -> Resultat:
-    """Renvoie {'label': 'positive'|'negative', 'score': float}."""
-    if not isinstance(texte, str) or not texte.strip():
-        raise ValueError("texte vide")
-    pipeline = charger_modele()
-    etiquette = pipeline.predict([texte])[0]
-    score = float(pipeline.predict_proba([texte]).max())
-    return {"label": str(etiquette), "score": round(score, 4)}
-
-
-def main() -> int:
-    if len(sys.argv) < 2:
-        print(__doc__)
-        return 2
-    resultat = predict(" ".join(sys.argv[1:]))
-    print(f"{resultat['label']} (confiance {resultat['score']:.0%})")
-    return 0
-
+__all__ = ["MODELE", "Resultat", "charger_modele", "main", "predict"]
 
 if __name__ == "__main__":
     raise SystemExit(main())

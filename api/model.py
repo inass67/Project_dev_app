@@ -1,24 +1,16 @@
 """Raccord entre l'API et le modèle entraîné au TP2.
 
-L'API n'entraîne rien et ne connaît pas scikit-learn : elle appelle la fonction
-predict() de src/predict.py, qui charge models/sentiment.joblib une seule fois.
+L'API n'entraîne rien et ne connaît pas scikit-learn : elle appelle le paquet sentiment_app
+(TP6), installé avec pip install -e ., qui charge le modèle une seule fois. Plus aucun
+bricolage du chemin d'import : l'API importe le paquet comme n'importe quelle bibliothèque.
 """
-import sys
-from pathlib import Path
 from typing import TypedDict
 
 from api.schemas import Label
+from sentiment_app.predict import CORRESPONDANCE, SEUIL_ABSTENTION, charger_modele
+from sentiment_app.predict import predict as _predict
 
-RACINE = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(RACINE / "src"))
-from predict import charger_modele  # noqa: E402  (fonctions du TP2)
-from predict import predict as _predict  # noqa: E402
-
-# Seuil d'abstention, choisi avec src/courbe_seuil.py sur le jeu de démonstration (58 avis de test) :
-# à 0,60, l'API répond à 42 avis (72 %), avec 2 erreurs au lieu de 7 ; les 16 autres vont à un humain.
-SEUIL_ABSTENTION = 0.60
-# Étiquettes du modèle -> étiquettes du contrat : une correspondance explicite, vérifiée au démarrage
-CORRESPONDANCE: dict[str, Label] = {"positive": "POSITIVE", "negative": "NEGATIVE"}
+__all__ = ["CORRESPONDANCE", "SEUIL_ABSTENTION", "SentimentClassifier", "load_model"]
 
 
 class Prediction(TypedDict):
@@ -48,5 +40,5 @@ class SentimentClassifier:
 
 
 def load_model() -> SentimentClassifier:
-    """Construit le classifier (le cache de chargement est dans src/predict.py)."""
+    """Construit le classifier (le cache de chargement est dans sentiment_app/predict.py)."""
     return SentimentClassifier()

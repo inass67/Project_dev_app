@@ -8,7 +8,8 @@ jobs:
         with: { fetch-depth: 0 }
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
-      - run: python -m venv .venv && . .venv/bin/activate && pip install pandas scikit-learn pytest "fastapi==0.115.*" "httpx==0.27.*" "uvicorn==0.30.*" "streamlit==1.39.*"
+      # Mêmes versions que requirements.txt : le modèle et les tests se comportent comme sur nos postes
+      - run: python -m venv .venv && . .venv/bin/activate && pip install "pandas==2.2.*" "scikit-learn==1.5.*" "joblib==1.4.*" "pytest==8.3.*" "pydantic==2.9.*" "fastapi==0.115.*" "httpx==0.27.*" "uvicorn==0.30.*" "streamlit==1.39.*"
       - name: Modèle de démonstration, pour les tests de l'API (TP3)
         run: . .venv/bin/activate && python src/make_demo.py && python src/train.py
       - name: Outils de qualité (TP4)
@@ -19,3 +20,13 @@ jobs:
         run: . .venv/bin/activate && mypy api
       - name: Tests et couverture
         run: . .venv/bin/activate && pytest -q --cov=api --cov-report=term-missing --cov-fail-under=95
+      - name: Roue du paquet (TP6)
+        run: . .venv/bin/activate && pip install build && python -m build --wheel
+      - name: Roue installée hors du dépôt (TP6)
+        run: |
+          python -m venv /tmp/roue-tp6
+          /tmp/roue-tp6/bin/pip install dist/sentiment_app-0.6.0-py3-none-any.whl
+          cd /tmp
+          /tmp/roue-tp6/bin/sentiment --version
+          if /tmp/roue-tp6/bin/sentiment predict "Livraison rapide"; then echo "le modèle aurait dû manquer"; exit 1; fi
+          SENTIMENT_MODELE="$GITHUB_WORKSPACE/models/sentiment.joblib" /tmp/roue-tp6/bin/sentiment predict "Livraison rapide, produit conforme, très satisfait"

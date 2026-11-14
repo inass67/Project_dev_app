@@ -21,9 +21,8 @@ def app():
 
 @pytest.fixture
 def module_predict():
-    """Le module src/predict.py tel que l'API l'a importé (api/model.py ajoute src/ au chemin)."""
-    import api.model  # noqa: F401  (importe aussi « predict »)
-    import predict
+    """Le module du paquet (TP6) qui charge le modèle, tel que l'API l'utilise."""
+    from sentiment_app import predict
 
     yield predict
     predict.charger_modele.cache_clear()  # les tests suivants rechargent le vrai modèle
