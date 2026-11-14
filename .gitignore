@@ -34,3 +34,7 @@ dist/
 build/
 *.egg-info/
 LIVRABLE_FORMULAIRE/
+
+*.zip
+LIVRABLE_A_RENDRE/
+Project_dev_app/
