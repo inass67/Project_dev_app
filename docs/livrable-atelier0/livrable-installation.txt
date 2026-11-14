@@ -6,12 +6,12 @@ Diagnostic TP1 dans C:\IA-DEV\sentiment-app
 
 Python
   OK         version 3.11.9
-  OK         environnement virtuel actif (C:\IA-DEV\verif-clone\.venv)
+  OK         environnement virtuel actif (C:\IA-DEV\sentiment-app\.venv)
 Paquets
   OK         pandas 2.2.3
   OK         scikit-learn 1.5.2
   OK         pytest 8.3.5
-Structure du dÚp¶t
+Structure du dépôt
   OK         dossier data/
   OK         dossier models/
   OK         dossier app/
@@ -28,26 +28,27 @@ Structure du dÚp¶t
   OK         .gitignore contient models/
   OK         .gitignore contient mlruns/
 Git
-  OK         dÚp¶t Git dÚtectÚ
-  OK         4 auteurs de commits : Inas Mourid, Inass inass67, Khadija Bounaji, inass67
+  OK         dépôt Git détecté
+  OK         4 auteurs de commits : Inass inass67, Inas Mourid, Khadija Bounaji, inass67
   OK         .venv/ n'est pas suivi par Git
 Fiches de cadrage
-  OK         3 fiches trouvÚes
-  OK         cas1-pharmacie.md : une approche cochÚe
-  OK         cas2-reglement.md : une approche cochÚe
-  OK         cas3-avis-negatifs.md : une approche cochÚe
+  OK         3 fiches trouvées
+  OK         cas1-pharmacie.md : une approche cochée
+  OK         cas2-reglement.md : une approche cochée
+  OK         cas3-avis-negatifs.md : une approche cochée
 
-RÚsultat : 0 erreur(s), 0 avertissement(s)
+Résultat : 0 erreur(s), 0 avertissement(s)
 Tout est en place.
 === Tests (clone neuf : 38 passed) ===
 ......................................                                   [100%]
-38 passed in 2.35s
+38 passed in 2.15s
 === Contributions ===
+     3	Inass inass67
      2	Inas Mourid
-     2	Inass inass67
      1	Khadija Bounaji
      1	inass67
-cb4fa70 README : Khadija Bounaji compl├¿te son travail de la semaine 1
+be076ae Atelier 0 : livrable final avec les deux membres
+cb4fa70 README : Khadija Bounaji complète son travail de la semaine 1
 2ee312f Atelier 0 : livrable d'installation et compte rendu
 1e42582 README: correction du nom du membre A
 069c74d README: ajout des membres du binome
