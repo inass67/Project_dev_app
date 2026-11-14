@@ -29,7 +29,7 @@ Structure du dÚp¶t
   OK         .gitignore contient mlruns/
 Git
   OK         dÚp¶t Git dÚtectÚ
-  OK         3 auteurs de commits : Inas Mourid, Inass inass67, inass67
+  OK         4 auteurs de commits : Inas Mourid, Inass inass67, Khadija Bounaji, inass67
   OK         .venv/ n'est pas suivi par Git
 Fiches de cadrage
   OK         3 fiches trouvÚes
@@ -41,11 +41,14 @@ RÚsultat : 0 erreur(s), 0 avertissement(s)
 Tout est en place.
 === Tests (clone neuf : 38 passed) ===
 ......................................                                   [100%]
-38 passed in 2.39s
+38 passed in 2.35s
 === Contributions ===
      2	Inas Mourid
-     1	Inass inass67
+     2	Inass inass67
+     1	Khadija Bounaji
      1	inass67
+cb4fa70 README : Khadija Bounaji compl├¿te son travail de la semaine 1
+2ee312f Atelier 0 : livrable d'installation et compte rendu
 1e42582 README: correction du nom du membre A
 069c74d README: ajout des membres du binome
 1bebfb9 TP1 : fiches de cadrage completees
