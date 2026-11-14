@@ -1,4 +1,4 @@
-# sentiment-app : dépôt du binôme
+﻿# sentiment-app : dépôt du binôme
 
 Application fil rouge du cours *Développement et déploiement d'applications intelligentes*.
 Ce dépôt grandit chaque semaine ; la semaine 1 met en place le cadrage et l'environnement.
@@ -43,4 +43,4 @@ sentiment-app/
 | Rôle | Nom | Identifiant GitHub | Travail de la semaine 1 |
 | --- | --- | --- | --- |
 | Membre A | inas Mourid | @inass67 | Environnement Python, dépôt GitHub, fiches de cadrage |
-| Membre B | Khadija Bounaji | @khadijabounaji | Environnement Python, vérification des tests, README |
+| Membre B | Khadija Bounaji | @khadijabounaji | Environnement Python, clone neuf, vérification des tests, README |
