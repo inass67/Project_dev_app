@@ -28,3 +28,9 @@ Thumbs.db
 .pytest_cache/
 .coverage
 htmlcov/
+src/sentiment_app/modele/*.joblib
+docs/livrable-tp4.txt
+dist/
+build/
+*.egg-info/
+LIVRABLE_FORMULAIRE/

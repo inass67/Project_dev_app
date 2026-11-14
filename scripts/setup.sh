@@ -1,3 +1,4 @@
+
 #!/usr/bin/env bash
 # Mise en place complète du poste pour le TP1 (Linux / macOS / Git Bash).
 # Usage : bash scripts/setup.sh
