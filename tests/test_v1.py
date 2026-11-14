@@ -44,8 +44,8 @@ def test_aucune_cle_personne_n_entre():
 
 def test_cle_trop_courte_refusee_sans_recopier_la_cle():
     with pytest.raises(ValueError) as e:
-        charger_cles("courte:client")
-    assert "courte" not in str(e.value)
+        charger_cles("abc123xyz:client")
+    assert "abc123xyz" not in str(e.value)
 
 
 def test_role_inconnu_refuse():
