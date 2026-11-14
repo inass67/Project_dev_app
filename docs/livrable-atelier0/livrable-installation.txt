@@ -1,0 +1,52 @@
+=== Versions ===
+Python 3.11.9
+git version 2.56.0.windows.3
+=== Diagnostic check_setup ===
+Diagnostic TP1 dans C:\IA-DEV\sentiment-app
+
+Python
+  OK         version 3.11.9
+  OK         environnement virtuel actif (C:\IA-DEV\verif-clone\.venv)
+Paquets
+  OK         pandas 2.2.3
+  OK         scikit-learn 1.5.2
+  OK         pytest 8.3.5
+Structure du dÚp¶t
+  OK         dossier data/
+  OK         dossier models/
+  OK         dossier app/
+  OK         dossier ui/
+  OK         dossier tests/
+  OK         dossier scripts/
+  OK         dossier docs/cadrage/
+  OK         fichier README.md
+  OK         fichier requirements.txt
+  OK         fichier .gitignore
+  OK         .gitignore contient .venv/
+  OK         .gitignore contient __pycache__/
+  OK         .gitignore contient .env
+  OK         .gitignore contient models/
+  OK         .gitignore contient mlruns/
+Git
+  OK         dÚp¶t Git dÚtectÚ
+  OK         3 auteurs de commits : Inas Mourid, Inass inass67, inass67
+  OK         .venv/ n'est pas suivi par Git
+Fiches de cadrage
+  OK         3 fiches trouvÚes
+  OK         cas1-pharmacie.md : une approche cochÚe
+  OK         cas2-reglement.md : une approche cochÚe
+  OK         cas3-avis-negatifs.md : une approche cochÚe
+
+RÚsultat : 0 erreur(s), 0 avertissement(s)
+Tout est en place.
+=== Tests (clone neuf : 38 passed) ===
+......................................                                   [100%]
+38 passed in 2.39s
+=== Contributions ===
+     2	Inas Mourid
+     1	Inass inass67
+     1	inass67
+1e42582 README: correction du nom du membre A
+069c74d README: ajout des membres du binome
+1bebfb9 TP1 : fiches de cadrage completees
+ab3534d first commit
